@@ -31,7 +31,7 @@
 # 5) perl
 # 6) crswallow (optional)
 # 7) mediainfo (for m2ts transcoding)
-VERSION="0.2.9"
+VERSION="0.3.0"
 
 # These are defaults, edit autoripper.conf instead!
 DEFAULT_TITLES="LONGEST"
