@@ -739,6 +739,12 @@ echo "Max ReFrames=$nREF"
 			OFPS="24000/1001"
 			DEFD="41.708ms"
 			OPT_DTC="softpulldown,ivtc=2,"
+		elif [ "$FORCE_PULLUP" == "3" ]
+		then
+			IFPS="30000/1001"
+			OFPS="24000/1001"
+			DEFD="41.708ms"
+			OPT_DTC="filmdint,"
 		else
 			IFPS="30000/1001"
 			OFPS="30000/1001"
@@ -757,6 +763,12 @@ echo "Max ReFrames=$nREF"
 			OFPS="24"
 			DEFD="41.667ms"
 			OPT_DTC="softpulldown,ivtc=2,"
+		elif [ "$FORCE_PULLUP" == "3" ]
+		then
+			IFPS="30"
+			OFPS="24"
+			DEFD="41.667ms"
+			OPT_DTC="filmdint,"
 		else
 			IFPS="30"
 			OFPS="30"
