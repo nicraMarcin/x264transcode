@@ -999,7 +999,7 @@ echo "Max ReFrames=$nREF"
             ALANGUAGE_NAME2="und"
         fi
 
-        ALLAUDIO="$ALLAUDIO --compression 0:none --language 0:${ALANGUAGE_NAME2} ${OUTPUT}/${TITLE}.${ATRACK}"
+        ALLAUDIO="$ALLAUDIO --language 0:${ALANGUAGE_NAME2} ${OUTPUT}/${TITLE}.${ATRACK}"
         echo $ATRACK $AINDEX $ALANGUAGE_CODE $ALANGUAGE_NAME1 $ALANGUAGE_NAME2
     done
 
@@ -1015,7 +1015,7 @@ echo "Max ReFrames=$nREF"
     fi # RESUME
 
     echo "Merging it all..."
-    RUNARGS="-o ${OUTPUT}/${TITLE}.x264.mkv --compression 0:none --default-duration 0:${DEFD} ${OUTPUT}/${TITLE}.x264 ${ALLAUDIO} ${SUBTITLES}"
+    RUNARGS="-o ${OUTPUT}/${TITLE}.x264.mkv --compression -1:none --default-duration 0:${DEFD} ${OUTPUT}/${TITLE}.x264 ${ALLAUDIO} ${SUBTITLES}"
     if [ "$MODE" == "dvd" ]
     then
         RUNARGS="$RUNARGS --chapters ${OUTPUT}/${TITLE}.chapters"
