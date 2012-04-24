@@ -657,7 +657,13 @@ do
 
     if [ "$MODE" == "dvd" ]
     then
-        dvdxchap -t ${A_TITLE_DECIMAL} ${INPUT}  | sed -e "s/Chapter\ //g" > ${OUTPUT}/${TITLE}.chapters
+	if [ "x`which dvdxchap`" == "x" ]
+	then
+		echo "Please install ogmtools (dvdxchap binary not found in PATH)"
+		exit 1
+	else
+        	dvdxchap -t ${A_TITLE_DECIMAL} ${INPUT}  | sed -e "s/Chapter\ //g" > ${OUTPUT}/${TITLE}.chapters
+	fi
     fi
 
     echo "Calculating default frame duration."
