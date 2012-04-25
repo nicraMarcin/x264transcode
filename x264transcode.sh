@@ -1036,7 +1036,7 @@ echo "Max ReFrames=$nREF"
     echo "mkvmerge $RUNARGS"
     $IONICE_COMMAND nice -n 19 mkvmerge $MKVQUIET $RUNARGS 1>&2
 
-    if [ $? != 0 ]
+    if [ $? -gt 1 ]
     then
       cat << EOF
 mkvmerge failed. Perhaps not enough space available.
