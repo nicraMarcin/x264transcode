@@ -206,14 +206,6 @@ then
         exit 0
 fi
 
-RESUME_FILE="$FINAL_DESTINATION/resume.log"
-
-if [ -f "$RESUME_FILE" ]
-then
-  RESUME=1
-  NOCLEANUP=1
-fi
-
 #only used if MODE dvd and we guess we're reading from a device
 DUMPSTREAM=0
 #(dumping a single title works more often than dumping the full disk)
@@ -276,6 +268,14 @@ else
     else #dumpfile
         TITLE_PREFIX="`basename $1`"
     fi
+fi
+
+RESUME_FILE="$FINAL_DESTINATION/${TITLE_PREFIX}-resume.log"
+
+if [ -f "$RESUME_FILE" ]
+then
+  RESUME=1
+  NOCLEANUP=1
 fi
 
 if [ "$NOCLEANUP" != "1" ]
