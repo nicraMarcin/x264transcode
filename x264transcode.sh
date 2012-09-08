@@ -977,7 +977,7 @@ echo "Max ReFrames=$nREF"
     then
         echo "keeping existing file ${OUTPUT}/${TITLE}.x264"
     else
-        RUNARGS="-nosound -noautosub $MENCODER_SUBTITLE_QUIRK $ENDPOS $DUMPFROM -fps ${IFPS} -vf ${OPT_DTC}${OPT_VF_PP}${CROP}${OPT_VF_SCALE},harddup ${OPT_SWS} -ovc x264 -x264encopts threads=${THREADS}:crf=${TITLE_CRF}:level_idc=${X264_LEVEL}:frameref=$nREF:bframes=3:${MENC_PROFILE}nodct_decimate:trellis=2:${NO_B_PYRAMID}:me=umh:mixed_refs:weight_b -ofps ${OFPS} -of rawvideo -o ${OUTPUT}/${TITLE}.x264.partial"
+        RUNARGS="-nosound -noautosub -nosub $MENCODER_SUBTITLE_QUIRK $ENDPOS $DUMPFROM -fps ${IFPS} -vf ${OPT_DTC}${OPT_VF_PP}${CROP}${OPT_VF_SCALE},harddup ${OPT_SWS} -ovc x264 -x264encopts threads=${THREADS}:crf=${TITLE_CRF}:level_idc=${X264_LEVEL}:frameref=$nREF:bframes=3:${MENC_PROFILE}nodct_decimate:trellis=2:${NO_B_PYRAMID}:me=umh:mixed_refs:weight_b -ofps ${OFPS} -of rawvideo -o ${OUTPUT}/${TITLE}.x264.partial"
         echo "mencoder $RUNARGS"
         if [ "$HAVE_CRSWALLOW" == "1" ]
         then
