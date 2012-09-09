@@ -1,4 +1,3 @@
-
 This is not really a README file but a collection of developers' emails'
 snippets. In the best tradition of open sores that is! ;)
 
@@ -7,6 +6,13 @@ the background. It rips ALL subtitles and ALL audio tracks and transcodes video
 to x264, profile 3.1, crf mode, with b-frames. Video stream is cropped (cropping
 uses twenty 200-frame samples across the entire length of the main feature).
 Chapters work. The container is MKV.
+
+NOTE: Because of the way NTSC DVDs are mastered (IVTC), it is very likely that you 
+will encounter audio drift in the encodes. They mostly contain mixed material 
+(IVTC/Progressive/Interlaced) and will NOT consistently convert. This is why 
+transcoding NTSC DVDs is discouraged. It's not a problem with this script or an 
+issue with IVTC but the inconsistent way in what the NTSC DVDs are mastered. PAL 
+sources are much better as it is almost always progressive.
 
 Quickstart:
 
