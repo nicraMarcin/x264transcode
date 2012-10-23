@@ -31,7 +31,7 @@
 # 5) perl
 # 6) crswallow (optional)
 # 7) mediainfo (for m2ts transcoding)
-VERSION="0.3.0"
+VERSION="0.3.2"
 
 # These are defaults, edit autoripper.conf instead!
 DEFAULT_TITLES="LONGEST"
@@ -1005,7 +1005,7 @@ echo "Max ReFrames=$nREF"
             ALANGUAGE_NAME2="und"
         fi
 
-        ALLAUDIO="$ALLAUDIO --language 0:${ALANGUAGE_NAME2} ${OUTPUT}/${TITLE}.${ATRACK}"
+        ALLAUDIO="$ALLAUDIO --language 0:${ALANGUAGE_NAME2} --compression 0:none ${OUTPUT}/${TITLE}.${ATRACK}"
         echo $ATRACK $AINDEX $ALANGUAGE_CODE $ALANGUAGE_NAME1 $ALANGUAGE_NAME2
     done
 
@@ -1013,7 +1013,7 @@ echo "Max ReFrames=$nREF"
 
     if [ "$SUBTITLE_STREAMS_NUMBER_DECIMAL" != "0" ] && [ "$SUBTITLE_SUCCESS_COUNT" != "0" ] && [ -s "${OUTPUT}/${TITLE}.idx" ] && [ -s "${OUTPUT}/${TITLE}.sub" ]
     then
-	SUBTITLES="${OUTPUT}/${TITLE}.idx"
+	SUBTITLES="--compression -1:none ${OUTPUT}/${TITLE}.idx"
     else
         SUBTITLES=""
     fi
